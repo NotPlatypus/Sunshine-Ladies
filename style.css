@@ -1,0 +1,59 @@
+/* ===== NON-CRITICAL STYLES ===== */
+/* Additional responsive breakpoints and refinements */
+
+/* About grid responsive */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr!important}
+  .contact-grid{grid-template-columns:1fr!important}
+}
+
+/* Gallery larger screens */
+@media(min-width:900px){
+  .gallery-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* Print styles */
+@media print{
+  .nav,.float-call,.btn-call,.btn-primary,.btn-secondary{display:none!important}
+  body{font-size:12pt;color:#000}
+  a{color:#000;text-decoration:underline}
+  .hero{background:#fff;padding:20pt 0}
+  .hero h1{color:#000}
+  .hero-sub,.hero-badge{color:#333}
+}
+
+/* Focus styles for keyboard navigation */
+a:focus-visible,button:focus-visible{
+  outline:3px solid #F5C300;
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* Skip link */
+.skip-link{
+  position:absolute;
+  top:-100px;
+  left:0;
+  background:var(--yellow);
+  color:var(--navy-dark);
+  font-weight:700;
+  padding:10px 16px;
+  z-index:999;
+  border-radius:0 0 8px 0;
+  transition:top .2s;
+}
+.skip-link:focus{top:0}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .fade-up{opacity:1;transform:none}
+  .float-call{animation:none}
+}
+
+/* High contrast */
+@media(forced-colors:active){
+  .btn-primary,.btn-call{border:2px solid ButtonText}
+  .service-card,.review-card{border:1px solid ButtonText}
+}
